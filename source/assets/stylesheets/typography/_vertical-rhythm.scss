@@ -1,0 +1,7 @@
+* { margin: 0; }
+* + * { margin-top: $line-height; }
+body { line-height: $line-height; }
+.CancelVertical {
+  margin-top: 0;
+  margin-bottom: 0;
+}

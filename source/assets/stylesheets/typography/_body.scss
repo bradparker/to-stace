@@ -1,0 +1,28 @@
+body {
+  font-family: $font-body;
+  font-size: 100%;
+}
+
+a { color: inherit; }
+a:visted { color: inherit; }
+
+blockquote {
+  position: relative;
+  padding-left: $line-height;
+}
+
+blockquote:before {
+  content: '"';
+  position: absolute;
+  left: -0.125em;
+  font-size: 2.25em;
+  line-height: 2.333rem;
+  font-family: $font-monospace;
+}
+
+.Content--underline {
+  border-bottom: thin solid;
+  line-height: 0.8em;
+  display: inline-block;
+  margin: 0;
+}

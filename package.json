@@ -1,0 +1,43 @@
+{
+  "name": "bradparker",
+  "version": "1.0.0",
+  "description": "Personal website dependencies",
+  "main": "build/index.html",
+  "scripts": {
+    "postcss": "postcss -u 'autoprefixer' -u 'postcss-import' -o build/assets/stylesheets/main.css build/assets/stylesheets/main.css",
+    "sass": "node-sass --importer ./node_modules/node-sass-globbing source/assets/stylesheets/main.scss > build/assets/stylesheets/main.css",
+    "styles": "mkdir -p build/assets/stylesheets/ && npm run sass && npm run postcss",
+    "watch-styles": "nodemon -x 'npm run styles' -w source/assets -e scss",
+    "images": "mkdir -p build/assets/images/ && cp -R source/assets/images build/assets",
+    "watch-images": "nodemon -x 'npm run images' -w source/assets/images -e png,svg,jpg",
+    "index": "mkdir -p build && cp source/index.html build/index.html",
+    "watch-index": "nodemon -x 'npm run index' -w source -e html",
+    "build": "npm run styles && npm run images && npm run index",
+    "watch": "npm run watch-styles & npm run watch-images & npm run watch-index",
+    "serve": "static build",
+    "dev": "npm run watch & npm run serve",
+    "deploy": "git-directory-deploy --directory build --branch gh-pages",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradparker/to-stace"
+  },
+  "author": "Brad Parker <hi@bradparker.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradparker/to-stace/issues"
+  },
+  "homepage": "https://github.com/bradparker/bradparker.github.io",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "git-directory-deploy": "^1.1.0",
+    "node-sass": "^3.3.3",
+    "node-sass-globbing": "0.0.23",
+    "node-static": "^0.7.7",
+    "nodemon": "^1.7.3",
+    "postcss": "^5.0.10",
+    "postcss-cli": "^2.2.0",
+    "postcss-import": "^7.1.0"
+  }
+}

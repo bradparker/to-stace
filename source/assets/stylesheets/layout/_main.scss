@@ -1,0 +1,56 @@
+body { margin: 0; }
+
+.Container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .Container--two-columns {
+    column-count: 2;
+    column-gap: 1.5em;
+  }
+}
+
+.FlexParent {
+  display: flex;
+}
+
+.FlexParent--column {
+  flex-flow: column;
+}
+
+.FlexParent--center-children {
+  justify-content: center;
+}
+
+.FlexChild {
+  flex-basis: auto;
+}
+
+.FlexChild--no-flex {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.FlexChild--grow {
+  flex-grow: 1;
+}
+
+.FlexChild--no-grow {
+  flex-grow: 0;
+}
+
+.FlexChild--shrink {
+  flex-shrink: 1;
+}
+
+.FlexChild--no-shrink {
+  flex-shrink: 0;
+}
+
+
